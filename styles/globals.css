@@ -1,9 +1,49 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap");
+
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  --hue: 14;
+  --first-color: hsl(var(--hue), 91%, 54%);
+  --first-color-alt: hsl(var(--hue), 91%, 50%);
+  --title-color: hsl(var(--hue), 4%, 100%);
+  --text-color: hsl(var(--hue), 4%, 85%);
+  --text-color-light: hsl(var(--hue), 4%, 55%);
+
+  /*Green gradient*/
+  --body-color: linear-gradient(
+    90deg,
+    hsl(104, 28%, 40%) 0%,
+    hsl(58, 28%, 40%) 100%
+  );
+  --container-color: linear-gradient(
+    136deg,
+    hsl(104, 28%, 35%) 0%,
+    hsl(58, 28%, 35%) 100%
+  );
+
+  /*========== Font ==========*/
+  --body-font: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: var(--body-color);
+  font-family: var(--body-font);
+  color: var(--text-color);
 }
 
 a {
@@ -13,4 +53,20 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+header {
+  background: var(--body-color);
+  color: var(--title-color);
+  height: calc(var(--header-height));
+}
+
+@media screen and (min-width: 767px) {
+  header {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+}
+
+#navbar-menu {
+  background: var(--container-color);
 }
