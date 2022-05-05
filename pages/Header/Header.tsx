@@ -1,17 +1,32 @@
 import React, { useState } from "react";
-import { HiX } from "react-icons/hi";
-import { HiViewGrid } from "react-icons/hi";
 import Image from "next/image";
-import SpiderNav from "./assets/nav-img.png";
 import LogoNav from "./assets/logo.png";
+import SliderMenu from "../components/Slider/SliderMenu";
+import NavbarMobile from "./NavbarMobile";
+import Navbar from "./Navbar";
 
 const Header = () => {
-  const [navOpen, setNavOpen] = useState(false);
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 20) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", changeNavbarColor);
+  }
 
   return (
     <>
       <header
-        className="grid items-center bg-white max-w-7xl mx-auto px-4 sm:px-6"
+        className={
+          colorChange
+            ? "bg-black z-50 grid items-center max-w-4xl mx-auto px-5 sm:px-6 w-full fixed"
+            : "grid items-center max-w-4xl mx-auto px-5 sm:px-6 w-full fixed"
+        }
         id="header"
       >
         <div className="flex justify-between items-center md:justify-start md:space-x-10">
@@ -24,81 +39,11 @@ const Header = () => {
               <span>Halloween</span>
             </a>
           </div>
-          <div className="md:hidden">
-            <button
-              type="button"
-              className=" text-white hover:text-gray-200 focus:outline-none"
-              aria-expanded="false"
-              onClick={() => setNavOpen(!navOpen)}
-            >
-              <HiViewGrid className="w-[20px] h-[20px]" />
-            </button>
-          </div>
-          <nav className="hidden md:flex gap-12">
-            <a
-              href="#"
-              className="text-base font-medium text-white hover:text-gray-200"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="text-base font-medium text-white hover:text-gray-200"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="text-base font-medium text-white hover:text-gray-200"
-            >
-              Candy
-            </a>
-            <a
-              href="#"
-              className="text-base font-medium text-white hover:text-gray-200"
-            >
-              New
-            </a>
-          </nav>
-        </div>
-        <div
-          className={
-            "fixed left-0 py-14 bg-black w-full transition-all ease duration-300 delay-150 rounded-b-3xl" +
-            (navOpen ? " top-[0]" : " top-[-150%]")
-          }
-          id="navbar-menu"
-        >
-          <HiX
-            className="w-[24px] h-[24px] absolute top-3 right-3 cursor-pointer"
-            onClick={() => setNavOpen(!navOpen)}
-          />
-          <div className="absolute top-0">
-            <Image src={SpiderNav} width={100} height={120} />
-          </div>
-          <ul className="flex flex-col items-center gap-y-6">
-            <li className="nav-item">
-              <a className="text-md uppercase font-black" href="#home">
-                <span>Home</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="text-md uppercase font-black" href="#about">
-                <span>About</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="text-md uppercase font-black" href="#candy">
-                <span>Candy</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="text-md uppercase font-black" href="#new">
-                <span>New</span>
-              </a>
-            </li>
-          </ul>
+          <NavbarMobile />
+          <Navbar />
         </div>
       </header>
+      <SliderMenu />
     </>
   );
 };
