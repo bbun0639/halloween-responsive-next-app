@@ -22,11 +22,9 @@ const Header = () => {
   return (
     <>
       <header
-        className={
-          colorChange
-            ? "bg-black z-50 grid items-center max-w-4xl mx-auto px-5 sm:px-6 w-full fixed"
-            : "grid items-center max-w-4xl mx-auto px-5 sm:px-6 w-full fixed"
-        }
+        className={` ${
+          colorChange ? "bg-gradient-to-r from-[#4e7240] to-[#727140]" : ""
+        } z-50 grid items-center mx-auto px-5 sm:px-6 w-full fixed`}
         id="header"
       >
         <div className="flex justify-between items-center md:justify-start md:space-x-10">

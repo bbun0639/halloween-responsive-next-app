@@ -64,6 +64,11 @@ header {
   }
 }
 
+.section {
+  padding: 4.5rem 0 2rem;
+  margin: 0 1rem;
+}
+
 #navbar-menu {
   background: var(--container-color);
 }
