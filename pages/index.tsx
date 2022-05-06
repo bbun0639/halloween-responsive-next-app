@@ -5,6 +5,7 @@ import TrickOrTreat from "./TrickOrTreat/TrickOrTreat";
 import Discount from "./Discount/Discount";
 import NewProduct from "./NewProduct/NewProduct";
 import Newsletter from "./Newsletter/Newsletter";
+import Footer from "./Footer/Footer";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <Discount></Discount>
         <NewProduct></NewProduct>
         <Newsletter></Newsletter>
+        <Footer></Footer>
       </div>
     </>
   );
