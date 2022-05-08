@@ -1,29 +1,12 @@
 import React from "react";
+import { menuList } from "./menuList";
 
 const Navbar = () => {
-  const menu = [
-    {
-      name: "Home",
-      targetUrl: "#home",
-    },
-    {
-      name: "About",
-      targetUrl: "#about",
-    },
-    {
-      name: "Candy",
-      targetUrl: "#candy",
-    },
-    {
-      name: "New",
-      targetUrl: "#new",
-    },
-  ];
   return (
     <>
       <nav className="hidden md:flex">
         <ul className="gap-12 flex">
-          {menu.map((item, index) => (
+          {menuList.map((item, index) => (
             <li key={index}>
               <a
                 href={item.targetUrl}
@@ -33,6 +16,11 @@ const Navbar = () => {
               </a>
             </li>
           ))}
+          <li>
+            <a className="border-2 border-white p-[.75rem_1.5rem] rounded-full">
+              Support
+            </a>
+          </li>
         </ul>
       </nav>
     </>

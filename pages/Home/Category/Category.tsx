@@ -25,15 +25,16 @@ const Category = () => {
   return (
     <>
       <section className="section">
-        <div className="mb-8 whitespace-pre-line text-[20px] text-white font-bold text-center">{`Favorite Scare \n Category`}</div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8">
+        <div className="mb-8 whitespace-pre-line text-[20px] lg:text-[36px] text-white font-bold text-center">{`Favorite Scare \n Category`}</div>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8 lg:gap-x-20 max-w-4xl mx-auto">
           {favoriteInfos.map((item, index) => (
             <div
               key={index}
               className=" group flex flex-col items-center text-center"
             >
-              <div className="w-[120px] h-[120px] mb-3">
+              <div className="transition-all duration-500 ease w-[120px] h-[120px] lg:w-[200px] lg:h-[200px] mb-3">
                 <Image
+                  alt={`${item.title} Category`}
                   src={item.imageSrc}
                   className="transition duration-150 ease-out group-hover:-translate-y-2"
                 />

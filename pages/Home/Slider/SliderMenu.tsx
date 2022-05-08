@@ -57,31 +57,36 @@ const SliderMenu = () => {
     <div className="pb-[1rem]">
       <Slider {...settings}>
         {contentDetail.map((card, index) => (
-          <div className="!grid gap-4 px-7 !mb-4 mt-16" key={index}>
-            <div className="grid relative pt-[2rem]">
-              <div className="absolute right-0 flex flex-col items-end">
+          <div
+            className="!grid gap-4 md:gap-16 lg:gap-12 px-7 !mb-4 mt-16 md:grid-cols-2 md:pt-[4rem] md:pb-[1.5rem] max-w-4xl mx-auto"
+            key={index}
+          >
+            <div className="grid relative pt-[2rem] lg:pt-0">
+              <div className="absolute right-0 flex flex-col items-end lg:bottom-0 lg:right-[48%]">
                 <div className="text-[14px] font-bold text-white">
                   {card.smallTitle}
                 </div>
                 <div className="text-[14px]"> {card.smallSubTitle}</div>
               </div>
-              <div className="flex justify-center h-[250px]">
+              <div className="flex justify-center h-[250px] md:h-[300px] lg:h-[400px] lg:-translate-y-[3rem]">
                 <Image
                   className="object-contain flex-1"
                   src={card.imageSrc}
-                  // height={250}
+                  alt={`${card.title}`}
                 />
               </div>
-              <div className="absolute top-[7rem] right-[2rem] w-[8px] h-[8px] bg-white rounded-full after:content-[''] after:absolute after:w-[1px] after:h-[48px] after:bg-white after:top-[-3rem] after:right-[45%]"></div>
+              <div className="absolute top-[7rem] right-[2rem] lg:top-[85%] lg:right-[43%] w-[8px] h-[8px] bg-white rounded-full after:content-[''] after:absolute after:w-[1px] after:h-[48px] after:lg:h-[70px] after:bg-white after:top-[-3rem] after:lg:top-[0rem] after:right-[45%]"></div>
             </div>
             <div>
               <div className="text-[18px] font-bold pb-4 text-white">
                 {card.subTitle}
               </div>
-              <div className="text-[32px] font-black pb-4 text-white whitespace-pre-line leading-9">
+              <div className="text-[32px] lg:text-[60px] font-black pb-4 md:pb-6 text-white whitespace-pre-line leading-9 lg:leading-[109%]">
                 {card.title}
               </div>
-              <div className="text-[15px] pb-4">{card.description}</div>
+              <div className="text-[15px] pb-4 lg:pb-10 lg:pr-6">
+                {card.description}
+              </div>
               <div className="flex justify-between items-center text-[16px]">
                 <a
                   href="#"

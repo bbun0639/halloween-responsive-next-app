@@ -69,6 +69,12 @@ header {
   margin: 0 1rem;
 }
 
+@media screen and (min-width: 767px) {
+  .section {
+    padding: 7rem 0 2rem;
+  }
+}
+
 #navbar-menu {
   background: var(--container-color);
 }

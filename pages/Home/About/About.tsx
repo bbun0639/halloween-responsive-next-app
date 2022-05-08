@@ -13,12 +13,12 @@ const About = () => {
   return (
     <>
       <section className="section" id="about">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8">
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-8 whitespace-pre-line text-[20px] text-white font-bold text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 lg:gap-x-12 max-w-4xl mx-auto">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left my-auto">
+            <div className="mb-8 whitespace-pre-line text-[20px] lg:text-[36px] text-white font-bold">
               {aboutInfos.title}
             </div>
-            <p className="mb-8">{aboutInfos.description}</p>
+            <p className="mb-8 lg:pr-8">{aboutInfos.description}</p>
             <a
               href="#"
               className="bg-[#F4511F] text-white py-[1rem] px-[1.75rem] rounded-[0.5rem] font-medium "
@@ -26,7 +26,7 @@ const About = () => {
               Know more
             </a>
           </div>
-          <div className="w-[200px] h-[280px] mx-auto">
+          <div className="transition-all duration-500 ease w-[200px] h-[280px] mx-auto md:w-[250px] md:h-[350px] lg:w-[350px] lg:h-[490px]">
             <Image src={aboutInfos.imageUrl} />
           </div>
         </div>

@@ -49,7 +49,7 @@ const TrickOrTreat = () => {
   return (
     <>
       <section className="section" id="candy">
-        <div className="mb-8 whitespace-pre-line text-[20px] text-white font-bold text-center">{`Favorite Scare \n Category`}</div>
+        <div className="mb-8 whitespace-pre-line text-[20px] text-white font-bold text-center">{`Trick Or Treat`}</div>
         <div className="px-4 grid grid-cols-2 md:grid-cols-[200px_200px_200px] gap-6 md:gap-14 mx-auto justify-center">
           {favoriteInfos.map((item, index) => (
             <div
@@ -58,11 +58,14 @@ const TrickOrTreat = () => {
             >
               <div className="w-[90px] h-[90px] mb-2">
                 <Image
+                  alt={item.title}
                   src={item.imageSrc}
                   className="transition duration-150 ease-out group-hover:-translate-y-2"
                 />
               </div>
-              <h3 className="text-[15px] font-bold text-white">{item.title}</h3>
+              <h3 className="text-[15px] lg:text-[20px] font-medium text-white">
+                {item.title}
+              </h3>
               <span className="text-[13px] font-medium">{item.category}</span>
               <span className="text-[15px] font-medium text-white">
                 &#36;{item.price}

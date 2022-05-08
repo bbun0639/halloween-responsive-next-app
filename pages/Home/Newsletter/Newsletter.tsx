@@ -3,16 +3,15 @@ import React from "react";
 const Newsletter = () => {
   const aboutInfos = {
     title: "About Halloween\n Night",
-    description:
-      "Night of all the saints, or all the dead, is celebrated on October 31 and it is a very fun international celebration, this celebration comes from ancient origins, and is already celebrated by everyone.",
+    description: "Promotion new products and sales. Directly to your inbox",
     linkUrl: "#",
   };
   return (
     <>
       <section className="section" id="about">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8">
+        <div className="grid md:grid-cols-[.5fr] lg:grid-cols-[.4fr] xl:grid-cols-[.3fr] gap-y-8 justify-center">
           <div className="flex flex-col items-center text-center">
-            <div className="mb-8 whitespace-pre-line text-[20px] text-white font-bold text-center">
+            <div className="mb-8 whitespace-pre-line text-[20px] lg:text-[36px] text-white font-bold text-center">
               {`Our Newsletter`}
             </div>
             <p className="mb-8">{aboutInfos.description}</p>

@@ -3,6 +3,7 @@ import { HiX } from "react-icons/hi";
 import Image from "next/image";
 import SpiderNav from "./assets/nav-img.png";
 import { HiViewGrid } from "react-icons/hi";
+import { menuList } from "./menuList";
 
 // type NavMobileProps = {
 //   navOpen: boolean;
@@ -36,27 +37,19 @@ const NavMobile = () => {
           onClick={() => setNavOpen(!navOpen)}
         />
         <div className="absolute top-0">
-          <Image src={SpiderNav} width={100} height={120} />
+          <Image src={SpiderNav} width={100} height={120} alt="spider" />
         </div>
         <ul className="flex flex-col items-center gap-y-6">
-          <li className="nav-item">
-            <a className="text-md uppercase font-black" href="#home">
-              <span>Home</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="text-md uppercase font-black" href="#about">
-              <span>About</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="text-md uppercase font-black" href="#candy">
-              <span>Candy</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="text-md uppercase font-black" href="#new">
-              <span>New</span>
+          {menuList.map((item, index) => (
+            <li className="nav-item" key={index}>
+              <a className="text-md uppercase font-black" href={item.targetUrl}>
+                <span>{item.name}</span>
+              </a>
+            </li>
+          ))}
+          <li className="nav-item border-2 border-white p-[.75rem_1.5rem] rounded-full">
+            <a>
+              <span>Support</span>
             </a>
           </li>
         </ul>
